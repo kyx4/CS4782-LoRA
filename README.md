@@ -52,13 +52,18 @@ The challenges we faced during the implementation also gave us more insight into
 
 Original Paper: LoRA: Low Rank Adaption of Large Lanugage Models by Edward Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen. [https://arxiv.org/abs/2106.09685](https://arxiv.org/abs/2106.09685)
 
-Metrics: The metrics from BLEU, NIST, METEOR, ROUGE-L, CIDEr: [https://github.com/tuetschek/e2e-metrics](https://github.com/tuetschek/e2e-metrics)
+Metrics: The metrics BLEU, NIST, METEOR, ROUGE-L, CIDEr: [https://github.com/tuetschek/e2e-metrics](https://github.com/tuetschek/e2e-metrics)
 
 Dataset: 
+
   The E2E Dataset: New Challenges for End-to-End Generation,
+  
   Novikova, Jekaterina and Duvsek, Ondrej and Rieser, Verena,
+  
   Proceedings of the 18th Annual Meeting of the Special Interest Group on Discourse and Dialogue
+  
   Saarbrucken, Germany, 2017
+  
   [https://arxiv.org/abs/1706.09254](https://arxiv.org/abs/1706.09254)
 
 
