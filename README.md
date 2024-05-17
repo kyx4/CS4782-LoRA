@@ -34,4 +34,32 @@ All libraries are present within the notebook, to replicate our results it is ne
 
 ## Results and Analysis
 
+[Model Results](/results/model_results.PNG)
+
+One discrepancy between our results and the paper’s was that the paper had approximately 0.04 M less parameters. This may be due to some unlisted detail about their implementation as we followed exactly the steps to create the LoRA matrices that were outlined by the paper.
+Another discrepancy was that the paper’s implementation of Fine-Tuning and LoRA performed better than our implementation on most metrics. This is most likely due to either the above difference in number of parameters or differences in preprocessing. The E2E NLG dataset consisted of a meaning representation and a human reference, and while we combined this as training input in the format meaning representation = human reference, it is unclear how the paper preprocessed the input.
+Despite the discrepancies, the results we reproduced supported the potential of LoRA in lowering computational requirements [(~40% reduction in training time and ~20% reduction in GPU VRAM usage)](results/model_runtime.PNG) and the number of parameters greatly while still having good or better performance than fine-tuning. This was one of the paper’s main contributions as it lowers the barrier of entry, and also makes fine tuning easier for LLM’s with an increasing number of parameters that are updated every few months.
+
+## Conclusion and Future Work
+
+The re-implementation effort gave us insight into the process of fine tuning a pre-existing model, and by comparing the results of fine-tuning and LoRA we were able to see firsthand the effects of LoRA in lowering the computational requirement. This could potentially be applied in the future by allowing us and other private individuals with less computing power to fine-tune LLM’s with a larger number of parameters, such as Llama.
+The challenges we faced during the implementation also gave us more insight into implementing specific types of transformers. For example, GPT-2 being a CausalLM meant that we specifically needed to use a pad token rather than the default of setting the pad token to the eos token in Seq2Seq transformers, as this could lead to the model ignoring the eos token.
+
+## References
+
+Original Paper: LoRA: Low Rank Adaption of Large Lanugage Models by Edward Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen. [https://arxiv.org/abs/2106.09685](https://arxiv.org/abs/2106.09685)
+Metrics: The metrics from BLEU, NIST, METEOR, ROUGE-L, CIDEr: [https://github.com/tuetschek/e2e-metrics](https://github.com/tuetschek/e2e-metrics)
+Dataset: @inproceedings{novikova2017e2e,
+  title={The {E2E} Dataset: New Challenges for End-to-End Generation},
+  author={Novikova, Jekaterina and Du{\v{s}}ek, Ondrej and Rieser, Verena},
+  booktitle={Proceedings of the 18th Annual Meeting of the Special Interest 
+             Group on Discourse and Dialogue},
+  address={Saarbr\"ucken, Germany},
+  year={2017},
+  note={arXiv:1706.09254},
+  url={https://arxiv.org/abs/1706.09254},
+}
+
+
+
 
