@@ -6,7 +6,7 @@ Our project aims to implement Low Rank Adaption of Large Language Models, a new 
 
 The paper we are replicating is LoRA: Low Rank Adaption of Large Lanugage Models. The authors are: Edward Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, Lu Wang, Weizhu Chen.
 
-LoRA proposes an alternate method to adapt a model to downstream tasks. LoRA freezes all the pretrained weights of the model and injects trainable weight matrices of low rank into the transformer. Through this we are able to reduce the necessary trainable parameters for a layer from d x d, to d x r + r x d. Depending on how many and where LoRA weights are added, the number of trainable parameters can be reduced by a factor of 10,000.
+LoRA proposes an alternate method to adapt a model to downstream tasks. LoRA freezes all the pretrained weights of the model and injects trainable weight matrices of low rank into the transformer. Through this we are able to reduce the necessary trainable parameters for a layer from d x d, to d x r + r x d, where r can be as low as a single digit. Depending on how many and where LoRA weights are added, the number of trainable parameters can be reduced by a factor of 10,000.
 
 The main contribution of this proposed method is that the lower number of trainable parameters makes adapting pre-trained LLMs easier and more convenient. When using LoRA there is no longer a need to store and update each of the millions and billions parameters that are present in modern LLMs. This greatly reduces the necessary storage, hardware requirement, and training time. In addition, LoRA adaption even proves to be more accurate than normal fine tuning in both natural language understanding and natural language generation.
 
