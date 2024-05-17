@@ -56,14 +56,7 @@ Metrics: The metrics BLEU, NIST, METEOR, ROUGE-L, CIDEr: [https://github.com/tue
 
 Dataset: 
 
-  The E2E Dataset: New Challenges for End-to-End Generation,
-  
-  Novikova, Jekaterina and Duvsek, Ondrej and Rieser, Verena,
-  
-  Proceedings of the 18th Annual Meeting of the Special Interest Group on Discourse and Dialogue
-  
-  Saarbrucken, Germany, 2017
-  
+  The E2E Dataset: New Challenges for End-to-End Generation, by Novikova, Jekaterina and Duvsek, Ondrej and Rieser, Verena, at Proceedings of the 18th Annual Meeting of   the Special Interest Group on Discourse and Dialogue, from Saarbrucken, Germany, 2017
   [https://arxiv.org/abs/1706.09254](https://arxiv.org/abs/1706.09254)
 
 
