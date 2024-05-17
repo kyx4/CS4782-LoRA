@@ -14,7 +14,7 @@ The main contribution of this proposed method is that the lower number of traina
 
 We chose to reproduce the results of LoRA on natural language generation. The specific results are when LoRA was applied to GPT-2 Medium models and tested against the E2E NLG Challenge dataset. We decided to focus solely on the metrics provided when GPT2-M was fine tuned compared to when GPT2-M was trained with LoRA.
 
-[Paper results](paper_results.PNG)
+[Paper results](results/paper_results.PNG)
 
 We chose these results as they represented how the LoRA method not only was able to massively decrease the number of trainable parameters, but was also able to achieve higher accuracy scores when compared with normal fine tuning.
 
