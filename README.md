@@ -20,5 +20,18 @@ We chose these results as they represented how the LoRA method not only was able
 
 ## Re-implementation Details
 
+We followed the methodology used in the paper and applied injected LoRA matrices to the Wq and Wv matrices of each attention layer within GPT2-M. Following the paper, we used rank 4 matrices. To implement this, we used HuggingFace to retrieve the pre-trained GPT2-M model. 
+
+The dataset we used was the E2E NLG Challenge Dataset. This consisted of meaning representations, consisting of facts and details about a resturant/cafe, and human references that contain the details presented in normal human language. As GPT2-M is a causal and autoregressive model and not a seq2seq model, we converted the dataset to only contain inputs of [meaning representation = human reference] 
+
+We used HuggingFace's Trainer class to train both a LoRA variant GPT2-M and finetune a normal GPT2-M model. 
+
+To evaluate the results we used 5 different metrics: BLEU, NIST, MET, ROUGE-L, and CIDEr. All of which compare a given sentence and calculate how similar/accurate it is given reference sentences.
+
+In total, training LoRA model and finetuning took over 5 and a half hours of training on a single P100 GPU, with the GPU VAM usage peaking at 8.9 GB for fine tuning.
+
+All libraries are present within the notebook, to replicate our results it is necessary to just run all of the cells.
+
+## Results and Analysis
 
 
